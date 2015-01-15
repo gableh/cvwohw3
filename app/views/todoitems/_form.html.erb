@@ -1,0 +1,4 @@
+	<%= form_for @todoitem,url:todo_todoitems_path do |f| %>
+	<%= f.text_field :title, placeholder: "New todo" %>
+	<%= f.submit %>
+<% end %>

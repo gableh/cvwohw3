@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Todoitems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todoitems.each do |todo| %>
+      <tr>
+        <% if todo.todo_id == @todo.id %>
+          <td><%= todo.title %></td>
+          <td><%= todo.description %></td>
+        <% end %>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Todo', new_todo_todoitem_path %>
