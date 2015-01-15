@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :todos do
     resources :todoitems
   end
 
   root 'todos#index'
   
+=======
+>>>>>>> 0bc6c6df20d3c67f84131633efaf84493278a74a
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
