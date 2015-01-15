@@ -7,5 +7,5 @@ Execution plan :Controllers,Models:todoitems,todo,todo_categorys
                 A search function will be implemented somehow
                 Might implement some sort of user login if i have the time.
 
-Problems currently being faced: A LOT
+Problems currently being faced: A LOT ._.
 
