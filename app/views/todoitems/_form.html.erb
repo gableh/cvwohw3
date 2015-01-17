@@ -1,4 +1,7 @@
 	<%= form_for @todoitem,url: @todoitem.new_record? ? todo_todoitems_path : todo_todoitem_path do |f| %>
-	<%= f.text_field :title, placeholder: "New todo" %>
+	<div class="fields"><%= f.text_field :title, placeholder: "New todo" %></div>
+	<div class ="fields"><%= f.text_area :description, placeholder: "Description" %></div> 
+	<div class ="fields"><%= f.text_field :tag_list, placeholder: "Tags" %></div> 
+
 	<%= f.submit %>
 <% end %>
