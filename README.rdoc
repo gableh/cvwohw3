@@ -1,28 +1,11 @@
 == README
+the screenshot is call proof of installation.png,i rerouted the default screen already sorry
+Basic use cases:User should be able to create a multiple todo lists that hold multiple items each that can be assigned to different categories
+Execution plan :Controllers,Models:todoitems,todo,todo_categorys
+                Each have basic CRUD
+                completed tasks are marked as deleted instead of being removed totally(not yet done)
+                A search function will be implemented somehow
+                Might implement some sort of user login if i have the time.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Problems currently being faced: A LOT ._.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
