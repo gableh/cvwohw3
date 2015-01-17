@@ -17,8 +17,24 @@ class TodoitemsController < ApplicationController
   	end
 	def show
 	end
-	private
+	def edit
+		@todoitem = @todo.todoitems.find(params[:id])
 
+	end
+	def update
+		@todoitem = @todo.todoitems.find(params[:id])
+		if(@todoitem.update(todo_item_params))
+			redirect_to action: "index"
+		end
+	end	
+	def destroy
+    	@todoitem = @todo.todoitems.find(params[:id])
+    	@todoitem.destroy
+    	redirect_to action: "index"
+
+	end
+	private
+	
 	def set_todo
 		
 		@todo = Todo.find(params[:todo_id])
