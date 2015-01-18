@@ -2,7 +2,16 @@
 
 	<div class="fields"><%= f.text_field :title, placeholder: "New todo" %></div>
 	<div class ="fields"><%= f.text_area :description, placeholder: "Description" %></div>
-	<div class="fields"><%= f.datetime_select :due_by,:minute_step => 15,order: [:day, :month, :year] %></div> 
+	<div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                 <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
 	<div class ="fields"><%= f.text_field :tag_list, placeholder: "Tags" %></div> 
 
 
