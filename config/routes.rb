@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-
   resources :todos do
-    resources :todoitems
+    resources :todoitems do
+        get 'tags/:tag', to: 'todoitems#index', as: :tag
+
+    end
   end
 
   root 'todos#index'

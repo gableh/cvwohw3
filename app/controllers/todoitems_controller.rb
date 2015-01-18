@@ -1,8 +1,11 @@
 class TodoitemsController < ApplicationController
 	before_action :set_todo
 	def index
-		@todoitems = Todoitem.all
-
+		if params[:tag]
+			@todoitems = Todoitem.tagged_with(params[:tag])
+		else
+			@todoitems = Todoitem.all
+		end
 	end
 	def create
 	
