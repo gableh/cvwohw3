@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   resources :todos do
     resources :todoitems do
         get 'tags/:tag', to: 'todoitems#index', as: :tag
-
+        member do
+          get 'complete'
+        end
     end
+
   end
 
   root 'todos#index'

@@ -2,9 +2,16 @@ class TodoitemsController < ApplicationController
 	before_action :set_todo
 	def index
 		if params[:tag]
-			@todoitems = Todoitem.tagged_with(params[:tag])
+			@todoitems = Todoitem.tagged_with(params[:tag]).is_completed(false)
 		else
-			@todoitems = Todoitem.all
+			@todoitems = Todoitem.all.is_completed(false)
+		end
+	end
+	def complete
+		@todoitem = @todo.todoitems.find(params[:id])
+		@todoitem.is_completed = true
+		if @todoitem.save
+			redirect_to action: "index"
 		end
 	end
 	def create
