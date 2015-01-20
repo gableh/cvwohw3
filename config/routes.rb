@@ -4,6 +4,8 @@ Rails.application.routes.draw do
         get 'tags/:tag', to: 'todoitems#index', as: :tag
         member do
           get 'complete'
+          get 'completed'
+          get 'incomplete'
         end
     end
 

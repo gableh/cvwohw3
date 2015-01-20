@@ -7,9 +7,19 @@ class TodoitemsController < ApplicationController
 			@todoitems = Todoitem.all.is_completed(false)
 		end
 	end
+	def completed
+		@todoitems = Todoitem.all.is_completed(true)
+	end
 	def complete
 		@todoitem = @todo.todoitems.find(params[:id])
 		@todoitem.is_completed = true
+		if @todoitem.save
+			redirect_to action: "index"
+		end
+	end
+	def incomplete
+		@todoitem = @todo.todoitems.find(params[:id])
+		@todoitem.is_completed = false
 		if @todoitem.save
 			redirect_to action: "index"
 		end

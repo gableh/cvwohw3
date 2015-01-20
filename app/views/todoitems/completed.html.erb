@@ -1,14 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Todoitems</h1>
-
 <table>
   <thead>
     <tr>
       <th>Title</th>
       <th>Description</th>
       <th>Tags</th>
-      <th>Due By</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,11 +15,11 @@
           <td><%= todo.title %></td>
           <td><%= todo.description %></td>
           <td><%=raw todo.tag_list.map {|t| link_to t,todo_todoitem_tag_path(:todo_id => @todo.id,:todoitem_id => todo.id,:tag=> t ) }.join(',') %></td>
-          <td><%= todo.due_by %></td>
           <td><%= link_to 'Show',todo_todoitem_path(:id=>todo.id) %></td>
           <td><%= link_to 'Edit',edit_todo_todoitem_path(:id=>todo.id) %></td>
           <td><%= link_to 'Destroy',todo_todoitem_path(:id=>todo.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <td><%= link_to 'Mark as complete',complete_todo_todoitem_path(:id=>todo.id,:todoitem_id=>todo.id) %></td>
+           <td><%= link_to 'Mark as complete',incomplete_todo_todoitem_path(:id=>todo.id,:todoitem_id=>todo.id) %></td>
+
 
 
         <% end %>
@@ -33,7 +28,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-<%= link_to 'New Todo', new_todo_todoitem_path %>
-<%= link_to 'Show completed', completed_todo_todoitem_path(:id =>@todo.id) %>
