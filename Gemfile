@@ -13,7 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'bootstrap-sass','~> 3.2.0'
+gem 'bootstrap-sass'
 gem 'autoprefixer-rails'	
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'momentjs-rails', '>= 2.8.1'
