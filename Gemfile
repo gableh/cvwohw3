@@ -18,6 +18,8 @@ gem 'autoprefixer-rails'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'momentjs-rails', '>= 2.8.1'
 gem 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
+gem 'bootstrap_form'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

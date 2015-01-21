@@ -1,14 +1,14 @@
-<p id="notice"><%= notice %></p>
-<div class= "container">
-<h1>Things to do</h1>
-
-<table>
+<div class= "container1">
+<h1>Things to do for <%= @todo.title%></h1>
+<table class ="table">
   <thead>
     <tr>
       <th>Title</th>
+      <th></th>
       <th>Tags</th>
+      <th></th>
       <th>Due By</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -17,22 +17,27 @@
       <tr>
         <% if todo.todo_id == @todo.id %>
           <td><%= todo.title %></td>
+          <td></td>
           <td><%=raw todo.tag_list.map {|t| link_to t,todo_todoitem_tag_path(:todo_id => @todo.id,:todoitem_id => todo.id,:tag=> t ) }.join(',') %></td>
-          <td><%= todo.due_by %></td>
-          <td><%= link_to 'Show',todo_todoitem_path(:id=>todo.id) %></td>
-          <td><%= link_to 'Edit',edit_todo_todoitem_path(:id=>todo.id) %></td>
-          <td><%= link_to 'Destroy',todo_todoitem_path(:id=>todo.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <td><%= link_to 'Mark as complete',complete_todo_todoitem_path(:id=>todo.id,:todoitem_id=>todo.id) %></td>
+          <td></td>
+          <td id ="date"><%= todo.due_by %></td>
+          <td></td>
+          <td><%= link_to '<div class="btn btn-default">Show</div>'.html_safe,todo_todoitem_path(:id=>todo.id) %></td>
+          <td><%= link_to '<div class="btn btn-default">Mark as complete</div>'.html_safe,complete_todo_todoitem_path(:id=>todo.id,:todoitem_id=>todo.id) %></td>
+          <td><%= link_to '<div class="btn btn-default">Edit</div>'.html_safe,edit_todo_todoitem_path(:id=>todo.id) %></td>
+         
+          <td><%= link_to '<div class="btn btn-default">Delete</div>'.html_safe,todo_todoitem_path(:id=>todo.id), method: :delete, data: { confirm: 'Are you sure?This will permanently delete the todo!' } %></td>
 
 
         <% end %>
 
       </tr>
+
     <% end %>
   </tbody>
 </table>
 
 <br>
-<%= link_to 'New Todo', new_todo_todoitem_path %>
-<%= link_to 'Show completed', completed_todo_todoitem_path(:id =>@todo.id) %>
+<%= link_to '<div class="btn btn-primary">New Todo</div>'.html_safe, new_todo_todoitem_path %>
+<%= link_to '<div class="btn btn-primary">Show completed</div>'.html_safe, completed_todo_todoitem_path(:id =>@todo.id) %>
 </div>

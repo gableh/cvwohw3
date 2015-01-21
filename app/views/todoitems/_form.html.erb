@@ -1,18 +1,9 @@
 	
-    <%= form_for @todoitem,url: @todoitem.new_record? ? todo_todoitems_path : todo_todoitem_path do |f| %>
+    <%= bootstrap_form_for @todoitem,url: @todoitem.new_record? ? todo_todoitems_path : todo_todoitem_path do |f| %>
 
 	<div class="fields"><%= f.text_field :title, placeholder: "New todo" %></div>
 	<div class ="fields"><%= f.text_area :description, placeholder: "Description" %></div>
-	<div class='input-group date' name ="due_by" id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-                 <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script>
+	<div class="fields"><%= f.datetime_select :due_by %></div>
 	<div class ="fields"><%= f.text_field :tag_list, placeholder: "Tags" %></div> 
 
 

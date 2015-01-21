@@ -10,22 +10,32 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- 
+ *= require rails_bootstrap_forms
  *= require_self
  */
 @import "bootstrap-sprockets";
 @import 'bootstrap';
 @import 'bootstrap-datetimepicker';
 body{
-	padding:50px;
-	background: image-url('bg.jpg');
+	padding:75px 50px;
+	background:image-url('bg.jpg');
 
 }
 #cursive{
 	font-family:cursive;
 }
-.container{
+.container1{
 	width:80%;
 	margin:0 auto;
-	margin-left:20%
+	margin-left:25%
+}
+td{
+	width:50px;
+}
+
+#date{
+	width:100px;
+}
+#complete{
+	background:white;
 }
