@@ -22,7 +22,14 @@
           <td></td>
           <td id ="date"><%= todo.due_by %></td>
           <td></td>
-          <td><%= link_to '<div class="btn btn-default">Show</div>'.html_safe,todo_todoitem_path(:id=>todo.id) %></td>
+          <td>
+          <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle"><div class="btn btn-default">Show Description</div></a>
+                <ul class="dropdown-menu">
+                    <li><p><%= todo.description %></p></li>
+                </ul>
+            </li>
+          </td>
           <td><%= link_to '<div class="btn btn-default">Mark as complete</div>'.html_safe,complete_todo_todoitem_path(:id=>todo.id,:todoitem_id=>todo.id) %></td>
           <td><%= link_to '<div class="btn btn-default">Edit</div>'.html_safe,edit_todo_todoitem_path(:id=>todo.id) %></td>
          
