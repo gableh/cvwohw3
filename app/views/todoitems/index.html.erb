@@ -1,12 +1,11 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Todoitems</h1>
+<div class= "container">
+<h1>Things to do</h1>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
       <th>Tags</th>
       <th>Due By</th>
       <th colspan="3"></th>
@@ -18,7 +17,6 @@
       <tr>
         <% if todo.todo_id == @todo.id %>
           <td><%= todo.title %></td>
-          <td><%= todo.description %></td>
           <td><%=raw todo.tag_list.map {|t| link_to t,todo_todoitem_tag_path(:todo_id => @todo.id,:todoitem_id => todo.id,:tag=> t ) }.join(',') %></td>
           <td><%= todo.due_by %></td>
           <td><%= link_to 'Show',todo_todoitem_path(:id=>todo.id) %></td>
@@ -37,3 +35,4 @@
 <br>
 <%= link_to 'New Todo', new_todo_todoitem_path %>
 <%= link_to 'Show completed', completed_todo_todoitem_path(:id =>@todo.id) %>
+</div>

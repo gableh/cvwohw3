@@ -18,7 +18,14 @@
 @import 'bootstrap-datetimepicker';
 body{
 	padding:50px;
+	background: image-url('bg.jpg');
+
 }
 #cursive{
 	font-family:cursive;
+}
+.container{
+	width:80%;
+	margin:0 auto;
+	margin-left:20%
 }

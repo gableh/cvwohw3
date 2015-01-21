@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
-
+<div class ="container">
 <h1>Listing Todos</h1>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
+    
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,8 +15,8 @@
     <% @todos.each do |todo| %>
       <tr>
         <td><%= todo.title %></td>
-        <td><%= todo.description %></td>
-        <td><%= link_to 'Show',todo_todoitems_path(todo.id) %></td>
+        
+        <td><%= link_to 'Show',todo_todoitems_path(todo.id) %></a></td>
         <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
         <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -27,3 +27,4 @@
 <br>
 
 <%= link_to 'New Todo', new_todo_path %>
+</div>
