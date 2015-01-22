@@ -28,7 +28,7 @@
                 <ul class="dropdown-menu">
                     <li><p><%= todo.description %></p></li>
                 </ul>
-            </li>
+          </li>
           </td>
           <td><%= link_to '<div class="btn btn-default">Mark as complete</div>'.html_safe,complete_todo_todoitem_path(:id=>todo.id,:todoitem_id=>todo.id) %></td>
           <td><%= link_to '<div class="btn btn-default">Edit</div>'.html_safe,edit_todo_todoitem_path(:id=>todo.id) %></td>
