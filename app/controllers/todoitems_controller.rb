@@ -3,8 +3,11 @@ class TodoitemsController < ApplicationController
 	def index
 		if params[:tag]
 			@todoitems = Todoitem.tagged_with(params[:tag]).is_completed(false)
+			@todoitems =@todoitems.order(:due_by)
 		else
 			@todoitems = Todoitem.all.is_completed(false)
+			@todoitems =@todoitems.order(:due_by)
+
 		end
 	end
 	def completed
@@ -34,11 +37,13 @@ class TodoitemsController < ApplicationController
 	end
 	def new
     	@todoitem = @todo.todoitems.new
+    	@tags = Tag.all
   	end
 	def show
 	end
 	def edit
 		@todoitem = @todo.todoitems.find(params[:id])
+		@tags = Tag.all
 
 	end
 	def update
