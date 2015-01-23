@@ -47,4 +47,11 @@
 <br>
 <%= link_to '<div class="btn btn-primary">New Todo</div>'.html_safe, new_todo_todoitem_path %>
 <%= link_to '<div class="btn btn-primary">Show completed</div>'.html_safe, completed_todo_todoitem_path(:id =>@todo.id) %>
+<%= link_to '<div class="btn btn-primary">Back to TodoLists</div>'.html_safe, todos_url%>
+<%= if(params.has_key?(:tag))
+    params.delete :tag
+    link_to '<div class="btn btn-primary">See All</div>'.html_safe, todo_todoitems_url 
+  end
+    %>
+
 </div>

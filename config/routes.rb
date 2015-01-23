@@ -9,7 +9,7 @@ Rails.application.routes.draw do
           get 'incomplete'
         end
     end
-
+    
   end
 
   root 'todos#index'

@@ -5,7 +5,8 @@
 	<div class ="fields"><%= f.text_area :description, placeholder: "Description" %></div>
 	<div class="fields"><%= f.datetime_select :due_by,{:include_blank => true,:default =>nil} %></div>
 	<div class ="fields"><%= f.text_field :tag_list, placeholder: "Tags" %></div> 
-
-
 	<%= f.submit %>
+	<div>
+		<%= link_to '<div class="btn btn-default">Back</div>'.html_safe, todo_todoitems_url(:id =>@todo.id) %>
+	</div>
 <% end %>

@@ -1,5 +1,6 @@
 class TodoitemsController < ApplicationController
 	before_action :set_todo
+	
 	def index
 		if params[:tag]
 			@todoitems = Todoitem.tagged_with(params[:tag]).is_completed(false)
@@ -7,8 +8,8 @@ class TodoitemsController < ApplicationController
 		else
 			@todoitems = Todoitem.all.is_completed(false)
 			@todoitems =@todoitems.order(:due_by)
-
 		end
+		
 	end
 	def completed
 		@todoitems = Todoitem.all.is_completed(true)
@@ -37,13 +38,11 @@ class TodoitemsController < ApplicationController
 	end
 	def new
     	@todoitem = @todo.todoitems.new
-    	@tags = Tag.all
   	end
 	def show
 	end
 	def edit
 		@todoitem = @todo.todoitems.find(params[:id])
-		@tags = Tag.all
 
 	end
 	def update
@@ -61,12 +60,13 @@ class TodoitemsController < ApplicationController
 	private
 	
 	def set_todo
-		
+
 		@todo = Todo.find(params[:todo_id])
 	end
 
 	def todo_item_params
 		params.require(:todoitem).permit(:due_by,:title,:description,:tag_list)
+
 	end
 
 end
