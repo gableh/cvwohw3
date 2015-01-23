@@ -3,7 +3,7 @@
 
 	<div class="fields"><%= f.text_field :title, placeholder: "New todo" %></div>
 	<div class ="fields"><%= f.text_area :description, placeholder: "Description" %></div>
-	<div class="fields"><%= f.datetime_select :due_by %></div>
+	<div class="fields"><%= f.datetime_select :due_by,{:include_blank => true,:default =>nil} %></div>
 	<div class ="fields"><%= f.text_field :tag_list, placeholder: "Tags" %></div> 
 
 
