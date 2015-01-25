@@ -1,11 +1,14 @@
 == README
 the screenshot is call proof of installation.png,i rerouted the default screen already sorry
-Basic use cases:User should be able to create a multiple todo lists that hold multiple items each that can be assigned to different categories
-Execution plan :Controllers,Models:todoitems,todo,todo_categorys
-                Each have basic CRUD
-                completed tasks are marked as deleted instead of being removed totally(not yet done)
-                A search function will be implemented somehow
-                Might implement some sort of user login if i have the time.
-
-Problems currently being faced: A LOT ._.
-
+User Manual:Can create lists with todos in them,lists are sorted first by those with no due dates followed by those that have,arranged with the earliest due by date in front.
+                todos that have been completed can be marked as completed which will hide them from view or destroyed,which will remove them permanently.
+                This can be undone by going to the mark as completed page.To go back to the list of lists index,click on the 'Home' button on the top right.
+                Items in the todolists can be tagged as well as sorted by tags simply by clicking on them.
+                
+Accomplishments:This was done without any tutorial since the tutorial i was trying to follow gave me so many errors that i gave up on it and decided to make my own errors instead.
+                Having debugged all of this is also quite an achievement due to the sheer magnitude of the problems faced.
+                I created this todolist,which im quite proud of due to the amount of time spent on it and also because i think
+                it looks pretty nice.Especially the rounded border.Attempts were made at a jquery-ui autocomplete combobox but sadly
+                it didnt work as well as i hoped,especially since i wanted to combine it with multiple values. 
+                
+                
