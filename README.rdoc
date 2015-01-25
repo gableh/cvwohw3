@@ -1,5 +1,4 @@
 == README
-the screenshot is call proof of installation.png,i rerouted the default screen already sorry
 User Manual:Can create lists with todos in them,lists are sorted first by those with no due dates followed by those that have,arranged with the earliest due by date in front.
                 todos that have been completed can be marked as completed which will hide them from view or destroyed,which will remove them permanently.
                 This can be undone by going to the mark as completed page.To go back to the list of lists index,click on the 'Home' button on the top right.
